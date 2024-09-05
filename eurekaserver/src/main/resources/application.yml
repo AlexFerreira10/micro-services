@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: eurekaserver  # Nome do servi?o registrado no Eureka, todos os servi?os ter?o que ter
+
+server:
+  port: 8761  # Conven??o do Spring Cloud para o EurekaServer
+
+# Configura??es do cliente Eureka
+eureka:
+  client:
+    register-with-eureka: false  # Impede o registro do pr?prio EurekaServer como cliente
+    fetch-registry: false  # Desativa a obten??o de registros de outros servi?os

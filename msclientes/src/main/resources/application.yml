@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: msclientes
+
+server:
+  port: 0 #Colocamos 0 para ele subir em uma porta randômica não ocupada
+
+eureka:
+  client:
+    service-url:
+      # Configura a aplicação para iniciar em uma porta aleatória não ocupada.
+      defaultZone: http://localhost:8761/eureka
+  instance:
+    # Define o ID da instância no Eureka. Usa o nome da aplicação seguido de um valor aleatório gerado, garantindo um identificador único para cada instância da aplicação.
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
